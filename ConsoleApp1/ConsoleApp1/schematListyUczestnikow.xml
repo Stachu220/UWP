@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="osoby">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="uczestnik"  maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="lp" type="xs:integer" use="required"/>
+						<xs:attribute name="nazwisko" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="imie" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="rok" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:int">
+									<xs:minInclusive value="2010"/>
+									<xs:maxInclusive value="2100"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="kierunek" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:enumeration value="administracja"/>
+									<xs:enumeration value="zarządzanie"/>
+								</xs:restriction>
+							</xs:simpleType>	
+						</xs:attribute>
+						<xs:attribute name="stypendium" use="optional">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value=""/>
+									<xs:enumeration value=" "/>
+									<xs:enumeration value="tak"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="dojazd" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:enumeration value="brak"/>
+									<xs:enumeration value="krótki"/>
+									<xs:enumeration value="średni"/>
+									<xs:enumeration value="długi"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

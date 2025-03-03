@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<osoby>
+	<uczestnik lp="1" nazwisko="Bany" imie="Natalia" kierunek="administracja" stypendium=" " dojazd="krótki" rok="2011"/>
+	<uczestnik lp="2" nazwisko="Borowski" imie="Grzegorz Jan" kierunek="administracja" stypendium="tak" dojazd="brak" rok="2012"/>
+	<uczestnik lp="3" nazwisko="Bronikowski" imie="Michał Jerzy Adam" kierunek="administracja" stypendium="tak" dojazd="długi" rok="2011"/>
+	<uczestnik lp="4" nazwisko="Jasińska" imie="Monika" kierunek="administracja" stypendium="" dojazd="średni" rok="2011"/>
+	<uczestnik lp="5" nazwisko="Kopczyńska" imie="Jolanta" kierunek="zarządzanie" stypendium="tak" dojazd="brak" rok="2012"/>
+</osoby>
