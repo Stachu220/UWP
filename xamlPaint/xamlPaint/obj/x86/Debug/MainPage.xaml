@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="xamlPaint.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:xamlPaint"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Navy">
+
+    <Grid>
+        <Canvas x:ConnectionId='2' x:Name="poleRysowania" Margin="0,146,0,1"                                                       Background="White"                                                          />
+        <RadioButton x:ConnectionId='3' x:Name="rdbProsta" Content="Prosta" Margin="588,44,0,0" VerticalAlignment="Top"                             IsChecked="True"/>
+        <RadioButton x:ConnectionId='4' x:Name="rdbDowolna" Content="Dowolna" Margin="588,82,0,0" VerticalAlignment="Top"                             />
+        <StackPanel x:ConnectionId='5' x:Name="clrPanel" Margin="25,10,0,574" HorizontalAlignment="Left"                          >
+            <Rectangle Height="20" Width="20" Fill="Black" />
+            <Rectangle Height="20" Width="20" Fill="Red" />
+            <Rectangle Height="20" Width="20" Fill="Green" />
+            <Rectangle Height="20" Width="20" Fill="Blue" />
+            <Rectangle Height="20" Width="20" Fill="Yellow" />
+        </StackPanel>
+        <TextBlock Text="Brush Size" Margin="193,45,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20"/>
+        <Slider x:ConnectionId='6' HorizontalAlignment="Left" Margin="165,78,0,0" VerticalAlignment="Top" Width="300" x:Name="brushSizeSlider"                                   Minimum="1" Maximum="50" Value="2"/>
+        <RepeatButton x:ConnectionId='7' FontSize="30" Content="UNDO" Margin="867,44,0,0" VerticalAlignment="Top" Height="67" Width="275"                      Interval="10"/>
+        <Button x:ConnectionId='8' Content="Clear" Margin="1783,13,0,0" VerticalAlignment="Top" Height="83" Width="126"                      />
+
+
+    </Grid>
+</Page>
+

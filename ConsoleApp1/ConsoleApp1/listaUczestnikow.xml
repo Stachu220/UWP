@@ -1,8 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <osoby>
-	<uczestnik lp="1" nazwisko="Bany" imie="Natalia" kierunek="administracja" stypendium=" " dojazd="krótki" rok="2011"/>
-	<uczestnik lp="2" nazwisko="Borowski" imie="Grzegorz Jan" kierunek="administracja" stypendium="tak" dojazd="brak" rok="2012"/>
-	<uczestnik lp="3" nazwisko="Bronikowski" imie="Michał Jerzy Adam" kierunek="administracja" stypendium="tak" dojazd="długi" rok="2011"/>
-	<uczestnik lp="4" nazwisko="Jasińska" imie="Monika" kierunek="administracja" stypendium="" dojazd="średni" rok="2011"/>
-	<uczestnik lp="5" nazwisko="Kopczyńska" imie="Jolanta" kierunek="zarządzanie" stypendium="tak" dojazd="brak" rok="2012"/>
+	<uczestnik lp="1" nazwisko="Bany" imie="Natalia" kierunek="administracja" stypendium=" " dojazd="krótki" rok="2011">
+		<przedmioty>
+			<przedmiot nazwa="finanse" godziny="30" ects="3" />
+			<przedmiot nazwa="prawo" godziny="60" ects="5" />
+		</przedmioty>
+	</uczestnik>
+	<uczestnik lp="2" nazwisko="Borowski" imie="Grzegorz Jan" kierunek="administracja" stypendium="tak" dojazd="brak" rok="2012">
+		<przedmioty>
+			<przedmiot nazwa=" " godziny="15" ects="1"/>
+		</przedmioty>
+	</uczestnik>
+	<uczestnik lp="3" nazwisko="Bronikowski" imie="Michał Jerzy Adam" kierunek="administracja" stypendium="tak" dojazd="długi" rok="2011">
+		<przedmioty>
+
+		</przedmioty>
+	</uczestnik>
+	<uczestnik lp="4" nazwisko="Jasińska" imie="Monika" kierunek="administracja" stypendium="" dojazd="średni" rok="2011">
+		<przedmioty>
+			
+		</przedmioty>
+	</uczestnik>
+	<uczestnik lp="5" nazwisko="Kopczyńska" imie="Jolanta" kierunek="zarządzanie" stypendium="tak" dojazd="brak" rok="2012">
+		<przedmioty>
+
+		</przedmioty>
+	</uczestnik>
+	
 </osoby>
