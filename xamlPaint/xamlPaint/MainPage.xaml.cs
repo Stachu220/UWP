@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading;
 using System.Timers;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Security.Cryptography.Core;
@@ -30,7 +31,7 @@ namespace xamlPaint
         private Point _startingPoint = new Point();
         private Point _endingPoint = new Point();
         private Point _lastPoint = new Point();
-        private SolidColorBrush _brush = new SolidColorBrush(Windows.UI.Colors.Red);
+        private SolidColorBrush _brush = new SolidColorBrush(Windows.UI.Colors.LightPink);
         private bool _isDrawing = false;
         private Line _line;
         private Line _lastLine;
@@ -42,6 +43,7 @@ namespace xamlPaint
         {
             this.InitializeComponent();
             _lineSize = (int)brushSizeSlider.Value;
+
         }
 
         private void rdbProsta_checked(object sender, RoutedEventArgs e)
@@ -81,6 +83,7 @@ namespace xamlPaint
                 _line = new Line();
                 _line.Stroke = _brush;
                 _line.StrokeStartLineCap = PenLineCap.Round;
+                _line.StrokeEndLineCap = PenLineCap.Round;
                 if (_isProsta)
                 {
 
@@ -120,7 +123,9 @@ namespace xamlPaint
             catch (Exception exc)
             {
                 Console.WriteLine(exc);
+                _brush = new SolidColorBrush(Windows.UI.Colors.Red);
             }
+            curColor.Fill = _brush;
         }
 
         private void onBrushSizeChanged(object sender, RoutedEventArgs e)
@@ -132,6 +137,7 @@ namespace xamlPaint
             catch (Exception exc)
             {
                 Console.WriteLine(exc);
+                _lineSize = 2;
             }
         }
 
@@ -150,5 +156,49 @@ namespace xamlPaint
                 poleRysowania.Children.Remove(element);
             }
         }
+
+        private void poleRysowania_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            poleRysowania.Clip = new RectangleGeometry()
+            {
+                Rect = new Rect(0, 0, poleRysowania.ActualWidth, poleRysowania.ActualHeight)
+            };
+        }
+        private void ColorPicker_ColorChanged(ColorPicker sender, ColorChangedEventArgs args)
+        {
+            _brush = new SolidColorBrush(sender.Color);
+            curColor.Fill = _brush;
+        }
+        private void onExitConfirm()
+        {
+            CoreApplication.Exit();
+        }
+
+        private async void onExitButton(object send, RoutedEventArgs e)
+        {
+            string contentText = "Do you really want to exit?";
+            MediaElement mediaElement = new MediaElement();
+            var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
+            Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync(contentText);
+            mediaElement.SetSource(stream, stream.ContentType);
+            //ContentDialog
+            ContentDialog contentDialog = new ContentDialog()
+            {
+                Title = contentText,
+                PrimaryButtonText = "Exit",
+                CloseButtonText = "Cancel"
+            };
+            mediaElement.Play();
+
+            contentDialog.PrimaryButtonClick += (sender, args) =>
+            {
+                onExitConfirm();
+            };
+
+            await contentDialog.ShowAsync();
+            
+        }
+
+
     }
 }

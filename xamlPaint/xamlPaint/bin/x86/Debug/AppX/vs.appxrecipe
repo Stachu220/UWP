@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\stach\Documents\GitHub\UWP\xamlPaint\xamlPaint\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-11T13:58:22.683</Modified>
+      <Modified>2025-03-31T07:33:51.276</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\stach\Documents\GitHub\UWP\xamlPaint\xamlPaint\bin\x86\Debug\xamlPaint.exe">
       <PackagePath>entrypoint\xamlPaint.exe</PackagePath>
-      <Modified>2025-03-11T13:58:22.246</Modified>
+      <Modified>2025-03-31T07:33:50.661</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.14\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
@@ -86,15 +86,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stach\Documents\GitHub\UWP\xamlPaint\xamlPaint\bin\x86\Debug\xamlPaint.xr.xml">
       <PackagePath>xamlPaint.xr.xml</PackagePath>
-      <Modified>2025-03-11T13:57:24.309</Modified>
+      <Modified>2025-03-24T09:54:15.922</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stach\Documents\GitHub\UWP\xamlPaint\xamlPaint\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2025-03-11T13:58:22.157</Modified>
+      <Modified>2025-03-31T07:33:50.536</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stach\Documents\GitHub\UWP\xamlPaint\xamlPaint\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2025-03-11T13:58:22.157</Modified>
+      <Modified>2025-03-31T07:33:50.536</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -106,7 +106,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stach\Documents\GitHub\UWP\xamlPaint\xamlPaint\bin\x86\Debug\Core\xamlPaint.exe">
       <PackagePath>xamlPaint.exe</PackagePath>
-      <Modified>2025-03-11T13:58:22.680</Modified>
+      <Modified>2025-03-31T07:33:51.268</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

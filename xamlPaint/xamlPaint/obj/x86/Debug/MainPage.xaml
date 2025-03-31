@@ -9,21 +9,34 @@
     Background="Navy">
 
     <Grid>
-        <Canvas x:ConnectionId='2' x:Name="poleRysowania" Margin="0,146,0,1"                                                       Background="White"                                                          />
-        <RadioButton x:ConnectionId='3' x:Name="rdbProsta" Content="Prosta" Margin="588,44,0,0" VerticalAlignment="Top"                             IsChecked="True"/>
-        <RadioButton x:ConnectionId='4' x:Name="rdbDowolna" Content="Dowolna" Margin="588,82,0,0" VerticalAlignment="Top"                             />
-        <StackPanel x:ConnectionId='5' x:Name="clrPanel" Margin="25,10,0,574" HorizontalAlignment="Left"                          >
+        <Canvas x:ConnectionId='2' x:Name="poleRysowania" Margin="0,146,0,1"                                                       Background="White"                                                                                                  />
+        <StackPanel Margin="529,0,560,574">
+            <TextBlock HorizontalAlignment="Center" Margin="0,14,0,0" TextWrapping="Wrap" Text="Wybierz rodzaj linii:" VerticalAlignment="Top" Padding="10"/>
+            <RadioButton x:ConnectionId='10' x:Name="rdbProsta" Content="Prosta"                             IsChecked="True" HorizontalAlignment="Center"/>
+            <RadioButton x:ConnectionId='11' x:Name="rdbDowolna" Content="Dowolna"                              HorizontalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel x:ConnectionId='3' x:Name="clrPanel" Margin="25,10,0,574" HorizontalAlignment="Left"                          >
             <Rectangle Height="20" Width="20" Fill="Black" />
-            <Rectangle Height="20" Width="20" Fill="Red" />
+            <Rectangle Height="20" Width="20" Fill="LightPink" />
             <Rectangle Height="20" Width="20" Fill="Green" />
             <Rectangle Height="20" Width="20" Fill="Blue" />
             <Rectangle Height="20" Width="20" Fill="Yellow" />
+            <Rectangle Height="20" Width="20" Fill="White" />
         </StackPanel>
-        <TextBlock Text="Brush Size" Margin="193,45,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20"/>
-        <Slider x:ConnectionId='6' HorizontalAlignment="Left" Margin="165,78,0,0" VerticalAlignment="Top" Width="300" x:Name="brushSizeSlider"                                   Minimum="1" Maximum="50" Value="2"/>
-        <RepeatButton x:ConnectionId='7' FontSize="30" Content="UNDO" Margin="867,44,0,0" VerticalAlignment="Top" Height="67" Width="275"                      Interval="10"/>
-        <Button x:ConnectionId='8' Content="Clear" Margin="1783,13,0,0" VerticalAlignment="Top" Height="83" Width="126"                      />
+        <TextBlock Text="Brush Size" Margin="239,43,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20"/>
+        <Slider x:ConnectionId='4' HorizontalAlignment="Left" Margin="211,76,0,0" VerticalAlignment="Top" Width="300" x:Name="brushSizeSlider"                                   Minimum="1" Maximum="50" Value="2"/>
+        <RepeatButton x:ConnectionId='5' FontSize="30" Content="UNDO" Margin="778,45,0,0" VerticalAlignment="Top" Height="67" Width="275"                      Interval="10" CornerRadius="20"/>
+        <Button x:ConnectionId='6' Margin="1192,76,0,0" VerticalAlignment="Top" FontSize="24" Content="Clear"  Height="58" Width="78"                       Background="red" CornerRadius="20"/>
+        <Button x:ConnectionId='7' Content="Exit" Margin="1192,9,0,0" VerticalAlignment="Top" FontSize="24" Height="58" Width="78"                      Background="DarkRed" CornerRadius="20"/>
 
+        <Button Content="More Colors" Margin="88,26,0,0" VerticalAlignment="Top">
+            <Button.Flyout>
+                <Flyout>
+                    <ColorPicker x:ConnectionId='9' HorizontalAlignment="Left"                                        />
+                </Flyout>
+            </Button.Flyout>
+        </Button>
+        <Rectangle x:ConnectionId='8' x:Name="curColor" HorizontalAlignment="Left" Height="40" Margin="86,72,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Page>

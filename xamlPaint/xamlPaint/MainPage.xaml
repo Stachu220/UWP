@@ -9,21 +9,34 @@
     Background="Navy">
 
     <Grid>
-        <Canvas x:Name="poleRysowania" Margin="0,146,0,1" PointerPressed="StartDrawing" PointerMoved="PtrMoved" Background="White" PointerReleased="StopDrawing" PointerExited="StopDrawing"/>
-        <RadioButton x:Name="rdbProsta" Content="Prosta" Margin="588,44,0,0" VerticalAlignment="Top" Checked="rdbProsta_checked" IsChecked="True"/>
-        <RadioButton x:Name="rdbDowolna" Content="Dowolna" Margin="588,82,0,0" VerticalAlignment="Top" Checked="rdbDowolna_checked"/>
+        <Canvas x:Name="poleRysowania" Margin="0,146,0,1" PointerPressed="StartDrawing" PointerMoved="PtrMoved" Background="White" PointerReleased="StopDrawing" PointerExited="StopDrawing" SizeChanged="poleRysowania_SizeChanged"/>
+        <StackPanel Margin="529,0,560,574">
+            <TextBlock HorizontalAlignment="Center" Margin="0,14,0,0" TextWrapping="Wrap" Text="Wybierz rodzaj linii:" VerticalAlignment="Top" Padding="10"/>
+            <RadioButton x:Name="rdbProsta" Content="Prosta" Checked="rdbProsta_checked" IsChecked="True" HorizontalAlignment="Center"/>
+            <RadioButton x:Name="rdbDowolna" Content="Dowolna" Checked="rdbDowolna_checked" HorizontalAlignment="Center"/>
+        </StackPanel>
         <StackPanel x:Name="clrPanel" Margin="25,10,0,574" HorizontalAlignment="Left" PointerPressed="GetColor">
             <Rectangle Height="20" Width="20" Fill="Black" />
-            <Rectangle Height="20" Width="20" Fill="Red" />
+            <Rectangle Height="20" Width="20" Fill="LightPink" />
             <Rectangle Height="20" Width="20" Fill="Green" />
             <Rectangle Height="20" Width="20" Fill="Blue" />
             <Rectangle Height="20" Width="20" Fill="Yellow" />
+            <Rectangle Height="20" Width="20" Fill="White" />
         </StackPanel>
-        <TextBlock Text="Brush Size" Margin="193,45,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20"/>
-        <Slider HorizontalAlignment="Left" Margin="165,78,0,0" VerticalAlignment="Top" Width="300" x:Name="brushSizeSlider" ValueChanged="onBrushSizeChanged" Minimum="1" Maximum="50" Value="2"/>
-        <RepeatButton FontSize="30" Content="UNDO" Margin="867,44,0,0" VerticalAlignment="Top" Height="67" Width="275" Click="onUndoButton" Interval="10"/>
-        <Button FontSize="30" Content="Clear" Margin="1783,13,0,0" VerticalAlignment="Top" Height="83" Width="126" Click="onClearButton" Background="red"/>
+        <TextBlock Text="Brush Size" Margin="239,43,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20"/>
+        <Slider HorizontalAlignment="Left" Margin="211,76,0,0" VerticalAlignment="Top" Width="300" x:Name="brushSizeSlider" ValueChanged="onBrushSizeChanged" Minimum="1" Maximum="50" Value="2"/>
+        <RepeatButton FontSize="30" Content="UNDO" Margin="778,45,0,0" VerticalAlignment="Top" Height="67" Width="275" Click="onUndoButton" Interval="10" CornerRadius="20"/>
+        <Button Margin="1192,76,0,0" VerticalAlignment="Top" FontSize="24" Content="Clear"  Height="58" Width="78" Click="onClearButton" Background="red" CornerRadius="20"/>
+        <Button Content="Exit" Margin="1192,9,0,0" VerticalAlignment="Top" FontSize="24" Height="58" Width="78" Click="onExitButton" Background="DarkRed" CornerRadius="20"/>
 
+        <Button Content="More Colors" Margin="88,26,0,0" VerticalAlignment="Top">
+            <Button.Flyout>
+                <Flyout>
+                    <ColorPicker HorizontalAlignment="Left" ColorChanged="ColorPicker_ColorChanged"/>
+                </Flyout>
+            </Button.Flyout>
+        </Button>
+        <Rectangle x:Name="curColor" HorizontalAlignment="Left" Height="40" Margin="86,72,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Page>
