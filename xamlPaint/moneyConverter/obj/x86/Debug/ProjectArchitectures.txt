@@ -1,0 +1,1 @@
+C:\Users\stach\Documents\GitHub\UWP\xamlPaint\moneyConverter\moneyConverter.csproj;x86
