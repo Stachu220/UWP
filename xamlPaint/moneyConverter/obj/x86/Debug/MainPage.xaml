@@ -30,9 +30,8 @@
                 <ColumnDefinition Width="320"/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="From Value" Grid.Column="1" HorizontalAlignment="Right" FontSize="20"/>
-            <ComboBox x:ConnectionId='3' x:Name="entryValueComboBox" Width="300" HorizontalAlignment="Center" Height="50" FontSize="26" HorizontalContentAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="0 5 0 5"                                                       >
-            </ComboBox>
-            <TextBox x:ConnectionId='4' x:Name="entryValueTxtBox" Grid.Row="1" Grid.Column="1" PlaceholderText="0.00" FontSize="26" TextAlignment="Right" Margin="0 5 5 5"                                           />
+            <ComboBox x:ConnectionId='3' x:Name="entryValueComboBox" Width="300" HorizontalAlignment="Center" Height="50" FontSize="26" HorizontalContentAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="0 5 0 5"                                                        MaxDropDownHeight="300" VerticalAlignment="Top"/>
+            <TextBox x:ConnectionId='4' x:Name="entryValueTxtBox" Grid.Row="1" Grid.Column="1" PlaceholderText="0.00" FontSize="26" TextAlignment="Right" Margin="0 5 5 5"                                            InputScope="CurrencyAmount"/>
             <TextBlock Text="To Value" Grid.Row ="2" Grid.Column="1" HorizontalAlignment="Right" FontSize="20" />
             <ComboBox x:ConnectionId='5' x:Name="outputValueComboBox" Width="300" HorizontalAlignment="Center" Height="50" FontSize="26" HorizontalContentAlignment="Center" Grid.Row="3" Grid.Column="0" Margin="0 5 0 5"                                                        >
             </ComboBox>

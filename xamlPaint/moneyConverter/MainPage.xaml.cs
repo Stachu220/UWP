@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -64,54 +65,59 @@ namespace moneyConverter
                     textbox.Text = "0.";
                 }
                 textbox.Select(textbox.Text.Length, 0);
-
-                var output = (TextBox)outputValueTxtBox;
-
-                if (selectedEntry != null && selectedEntry.kodWaluty != "PLN")
-                {
-                    double exchange = double.Parse(textbox.Text) * double.Parse(selectedEntry.kursSredni) * double.Parse(selectedEntry.przelicznik);
-                    exchange = exchange / (double.Parse(selectedOutput.kursSredni) * double.Parse(selectedOutput.przelicznik));
-                    output.Text = Math.Round(exchange, 4).ToString();
-                }
-                else if (selectedEntry != null)
-                {
-                    double exchange = double.Parse(textbox.Text) / (double.Parse(selectedOutput.kursSredni) * double.Parse(selectedOutput.przelicznik));
-                    output.Text = Math.Round(exchange, 4).ToString();
-                }
             }
 
+            convert();
 
         }
 
         private async void Grid_Loaded(object sender, RoutedEventArgs e)
         {
 
-            var listonosz = new HttpClient();
-            var dane = await listonosz.GetStringAsync(new Uri(_BNPLink));
-
-            var daneXml = XDocument.Parse(dane);
-            var listaPozycji = from item in daneXml.Descendants("pozycja")
-                               select new ListaA()
-                               {
-                                   przelicznik = item.Element("przelicznik").Value,
-                                   kodWaluty = item.Element("kod_waluty").Value,
-                                   kursSredni = item.Element("kurs_sredni").Value.Replace(',', '.')
-                               };
-            aktualneKursy = listaPozycji.ToList();
-            
-            aktualneKursy.Insert(0,
-                new ListaA()
-                {
-                    przelicznik = "1",
-                    kodWaluty = "PLN",
-                    kursSredni = "1.0000"
-                }
-            );
-
-            foreach (var item in aktualneKursy)
+            try
             {
-                entryValueComboBox.Items.Add(string.Concat(item.kodWaluty + " | " + item.kursSredni));
-                outputValueComboBox.Items.Add(string.Concat(item.kodWaluty + " | " + item.kursSredni));
+                var listonosz = new HttpClient();
+                var dane = await listonosz.GetStringAsync(new Uri(_BNPLink));
+
+                var daneXml = XDocument.Parse(dane);
+                var listaPozycji = from item in daneXml.Descendants("pozycja")
+                                   select new ListaA()
+                                   {
+                                       przelicznik = item.Element("przelicznik").Value,
+                                       kodWaluty = item.Element("kod_waluty").Value,
+                                       kursSredni = item.Element("kurs_sredni").Value.Replace(',', '.')
+                                   };
+                aktualneKursy = listaPozycji.ToList();
+
+                aktualneKursy.Insert(0,
+                    new ListaA()
+                    {
+                        przelicznik = "1",
+                        kodWaluty = "PLN",
+                        kursSredni = "1.0000"
+                    }
+                );
+
+
+                foreach (var item in aktualneKursy)
+                {
+                    entryValueComboBox.Items.Add(string.Concat(item.kodWaluty + " | " + item.kursSredni));
+                    outputValueComboBox.Items.Add(string.Concat(item.kodWaluty + " | " + item.kursSredni));
+                }
+
+            } catch (Exception exeption)
+            {
+                Console.WriteLine(exeption.Message);
+                ContentDialog dialog = new ContentDialog
+                {
+                    Content = "Can't access BNP data, check your internet connection",
+                    CloseButtonText = "OK"
+                };
+                dialog.CloseButtonClick += (sender2, args) =>
+                {
+                    ExitButtonDialog();
+                };
+                await dialog.ShowAsync();
             }
         }
 
@@ -129,6 +135,7 @@ namespace moneyConverter
                     break;
                 }
             }
+            convert();
         }
 
         private void outputValueComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -145,6 +152,35 @@ namespace moneyConverter
                     break;
                 }
             }
+            convert();
         }
+
+        private void convert()
+        {
+            if (entryValueTxtBox.Text != null && entryValueTxtBox.Text != "")
+            {
+                if (selectedEntry != null && selectedEntry.kodWaluty != "PLN" && selectedOutput != null)
+                {
+                    double exchange = double.Parse(entryValueTxtBox.Text) * double.Parse(selectedEntry.kursSredni) / double.Parse(selectedEntry.przelicznik);
+                    exchange = exchange / (double.Parse(selectedOutput.kursSredni) * double.Parse(selectedOutput.przelicznik));
+                    outputValueTxtBox.Text = Math.Round(exchange, 4).ToString();
+                }
+                else if (selectedEntry != null && selectedOutput != null )
+                {
+                    double exchange = double.Parse(entryValueTxtBox.Text) / (double.Parse(selectedOutput.kursSredni) / double.Parse(selectedOutput.przelicznik));
+                    outputValueTxtBox.Text = Math.Round(exchange, 4).ToString();
+                }
+            }
+            else if (entryValueTxtBox.Text == "")
+            {
+                outputValueTxtBox.Text = "0";
+            }
+        }
+
+        private void ExitButtonDialog()
+        {
+            CoreApplication.Exit();
+        }
+
     }
 }

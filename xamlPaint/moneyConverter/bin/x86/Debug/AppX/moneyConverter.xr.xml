@@ -48,6 +48,8 @@
       <RootProperty Name="FontSize" />
       <RootProperty Name="HorizontalContentAlignment" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="MaxDropDownHeight" />
+      <RootProperty Name="VerticalAlignment" />
       <RootEvent Name="SelectionChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
@@ -55,6 +57,7 @@
       <RootProperty Name="FontSize" />
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="InputScope" />
       <RootProperty Name="Text" />
       <RootProperty Name="IsEnabled" />
       <RootEvent Name="TextChanged" />
