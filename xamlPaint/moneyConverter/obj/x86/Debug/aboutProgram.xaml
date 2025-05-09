@@ -19,6 +19,23 @@
         </StackPanel>
             <Button x:ConnectionId='2' Content="Go back"                     />
         <Grid Grid.Row="1">
+            <StackPanel Height="300">
+                <TextBlock x:ConnectionId='3'
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    x:Name="Author"
+                    Text="Autor: Filip Stachnik"
+                    />
+                <TextBlock x:ConnectionId='4'
+                    x:Name="Data"
+                    />
+                <TextBlock x:ConnectionId='5'
+                    x:Name="SourceValue"
+                    />
+                <TextBlock x:ConnectionId='6'
+                    x:Name="OutputValue"
+                    />
+            </StackPanel>
 
         </Grid>
 

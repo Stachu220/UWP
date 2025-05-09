@@ -19,6 +19,29 @@
         </StackPanel>
             <Button Content="Go back" Click="Button_Click"/>
         <Grid Grid.Row="1">
+            <StackPanel Height="300">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    x:Name="Author"
+                    Text="Autor: Filip Stachnik"
+                    />
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    x:Name="Data"
+                    />
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    x:Name="SourceValue"
+                    />
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    x:Name="OutputValue"
+                    />
+            </StackPanel>
 
         </Grid>
 

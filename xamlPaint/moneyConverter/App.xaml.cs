@@ -7,6 +7,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -66,7 +67,9 @@ namespace moneyConverter
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
+
+                    var state = LoadState();
+                    rootFrame.Navigate(typeof(MainPage), state);
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();
@@ -94,7 +97,46 @@ namespace moneyConverter
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
+            SaveState();
             deferral.Complete();
         }
+
+        private void SaveState()
+        {
+
+            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+
+            var composite = new Windows.Storage.ApplicationDataCompositeValue
+            {
+                ["EntryCurrency"] = MainPage._selectedEntry.kodWaluty,
+                ["EntryValue"] = MainPage._EntryValue,
+                ["OutputCurrency"] = MainPage._selectedOutput.kodWaluty
+            };
+
+            localSettings.Values["AppState"] = composite;
+        }
+
+        private SavedState LoadState()
+        {
+            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+
+            var state = new SavedState();
+
+            if (localSettings.Values.TryGetValue("AppState", out object compositeObject) &&
+                compositeObject is ApplicationDataCompositeValue composite)
+            {
+                if (composite.TryGetValue("EntryCurrency", out object entryCurrency))
+                    state.EntryCurrencyCode = entryCurrency.ToString();
+
+                if (composite.TryGetValue("EntryValue", out object entryValue))
+                    state.EntryValue = entryValue.ToString();
+
+                if (composite.TryGetValue("OutputCurrency", out object outputCurrency))
+                    state.OutputCurrencyCode = outputCurrency.ToString();
+            }
+
+            return state;
+        }
+
     }
 }

@@ -25,11 +25,16 @@ namespace moneyConverter
         public aboutProgram()
         {
             this.InitializeComponent();
+            Data.Text = String.Concat("Dane z: ", MainPage.BNPDate);
+            SourceValue.Text = String.Concat("Waluta wejsciowa: ", MainPage._selectedEntry?.nazwa.ToString());
+            OutputValue.Text = String.Concat("Waluta wyjściowa: ", MainPage._selectedOutput?.nazwa.ToString());
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Frame.GoBack();
         }
+
+
     }
 }
