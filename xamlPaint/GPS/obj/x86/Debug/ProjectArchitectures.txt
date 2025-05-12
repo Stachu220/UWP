@@ -1,0 +1,1 @@
+C:\Users\stach\Documents\GitHub\UWP\xamlPaint\GPS\GPS.csproj;x86
