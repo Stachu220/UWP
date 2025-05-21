@@ -13,14 +13,14 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.Devices.Geolocation;
+using Windows.Services.Maps;
+using System.Net.Http;
+using System.Xml.Linq;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace GPS
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class Coordinates : Page
     {
         public Coordinates()
@@ -28,9 +28,25 @@ namespace GPS
             this.InitializeComponent();
         }
 
-        private void onSearchClicked(object sender, RoutedEventArgs e)
+        private async void onSearchClicked(object sender, RoutedEventArgs e)
         {
-            LocateMeOnMap();
+            string apiKey = GeographicalData.BingKey;
+            string encodedAddress = Uri.EscapeDataString(SelectedAddress.Text);
+            string url = $"http://dev.virtualearth.net/REST/v1/Locations?q={encodedAddress}&key={apiKey}&output=xml";
+            
+            var listonosz = new HttpClient();
+            var result = await listonosz.GetAsync(url);
+
+            if (result != null && result.IsSuccessStatusCode)
+            {
+                var content = await result.Content.ReadAsStringAsync();
+                var contentXML = XDocument.Parse(content);
+                
+                XNamespace ns = "http://schemas.microsoft.com/search/local/ws/rest/v1";
+
+                var adres = contentXML.Descendants(ns + "Name").FirstOrDefault().Value;
+                GeographicalData.EndPointDescription = adres;
+            }
         }
 
         private void onBackClicked(object sender, RoutedEventArgs e)
@@ -38,15 +54,23 @@ namespace GPS
             Frame.GoBack();
         }
 
-        private async void LocateMeOnMap()
+        private async void locateMeOnMap()
         {
             Geolocator geolocator = new Geolocator();
-            Geoposition geoposition;
             geolocator.DesiredAccuracy = PositionAccuracy.High;
-            
-            geoposition = await geolocator.GetGeopositionAsync();
-            CurrentCoordinates.Text = "Latitude: " + geoposition.Coordinate.Point.Position.Latitude.ToString() + "\nLongtitude: " + geoposition.Coordinate.Point.Position.Longitude.ToString();
+            Geoposition geoposition = await geolocator.GetGeopositionAsync();
+            CurrentCoordinates.Text = "Latitude: " + geoposition.Coordinate.Point.Position.Latitude.ToString(".###") + "\nLongtitude: " + geoposition.Coordinate.Point.Position.Longitude.ToString(".###");
 
+            GeographicalData.StartingPoint = new BasicGeoposition()
+            {
+                Latitude = geoposition.Coordinate.Point.Position.Latitude,
+                Longitude = geoposition.Coordinate.Point.Position.Longitude
+            };
+        }
+
+        private void onCoordinatesGridLoaded(object sender, RoutedEventArgs e)
+        {
+            locateMeOnMap();
         }
     }
 }

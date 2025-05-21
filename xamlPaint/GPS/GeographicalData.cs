@@ -7,5 +7,6 @@ namespace GPS
         public static BasicGeoposition StartingPoint;
         public static BasicGeoposition EndPoint;
         public static string EndPointDescription;
+        public static string BingKey;
     }
 }

@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Controls.Maps;
+using Windows.Services.Maps;
+using Windows.Devices.Geolocation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -26,6 +28,7 @@ namespace GPS
         public MainPage()
         {
             this.InitializeComponent();
+            GeographicalData.BingKey = AppMap.MapServiceToken;
         }
 
         private void onZoomInClicked(object sender, RoutedEventArgs e)
@@ -60,6 +63,22 @@ namespace GPS
         {
             //Handle Coodrinates button click
             Frame.Navigate(typeof(Coordinates));
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            if (GeographicalData.EndPointDescription == null)
+                return;
+
+            var pointerStart = new MapIcon()
+            {
+                Location = new Geopoint(GeographicalData.StartingPoint),
+                Title = "Here comes Johny"
+            };
+            AppMap.MapElements.Add(pointerStart);
+            AppMap.TrySetViewAsync(pointerStart.Location, 12);
+
+            base.OnNavigatedTo(e);
         }
     }
 

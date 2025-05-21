@@ -27,12 +27,18 @@
                     Text="Autor: Filip Stachnik"
                     />
                 <TextBlock x:ConnectionId='4'
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
                     x:Name="Data"
                     />
                 <TextBlock x:ConnectionId='5'
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
                     x:Name="SourceValue"
                     />
                 <TextBlock x:ConnectionId='6'
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
                     x:Name="OutputValue"
                     />
             </StackPanel>
