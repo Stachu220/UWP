@@ -29,7 +29,12 @@
             HorizontalAlignment="Left"
             Margin="30 0 0 8"
             />
-            
+            <TextBlock
+                Text=""
+                x:Name="distanceMap"
+                HorizontalAlignment="Right"
+                Margin="0 0 10 7"
+                />
         </StackPanel>
         <Custom:MapControl
             x:Name="AppMap"

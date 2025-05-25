@@ -45,7 +45,16 @@ namespace GPS
                 XNamespace ns = "http://schemas.microsoft.com/search/local/ws/rest/v1";
 
                 var adres = contentXML.Descendants(ns + "Name").FirstOrDefault().Value;
+                var adresLat = contentXML.Descendants(ns + "Latitude").FirstOrDefault().Value;
+                var adresLOng = contentXML.Descendants(ns + "Longitude").FirstOrDefault().Value;
+                GeographicalData.EndPoint = new BasicGeoposition()
+                {
+                    Latitude = double.Parse(adresLat),
+                    Longitude = double.Parse(adresLOng)
+                };
                 GeographicalData.EndPointDescription = adres;
+                GeographicalLength.Text = adresLat;
+                GeographicalWidth.Text = adresLOng;
             }
         }
 

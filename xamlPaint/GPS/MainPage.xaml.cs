@@ -73,10 +73,37 @@ namespace GPS
             var pointerStart = new MapIcon()
             {
                 Location = new Geopoint(GeographicalData.StartingPoint),
-                Title = "Here comes Johny"
+                Title = "Here you are"
             };
             AppMap.MapElements.Add(pointerStart);
-            AppMap.TrySetViewAsync(pointerStart.Location, 12);
+
+            var pointerEnd = new MapIcon()
+            {
+                Location = new Geopoint(GeographicalData.EndPoint),
+                Title = GeographicalData.EndPointDescription
+            };
+
+            AppMap.MapElements.Add(pointerEnd);
+
+            MapPolyline polyline = new MapPolyline()
+            {
+                StrokeColor = Windows.UI.Colors.Black,
+                StrokeThickness = 3,
+                StrokeDashed = true,
+                Path = new Geopath(new List<BasicGeoposition>
+                {
+                    GeographicalData.StartingPoint,
+                    GeographicalData.EndPoint
+                })
+            };
+
+            AppMap.MapElements.Add(polyline);
+
+            
+
+            AppMap.TrySetViewAsync(pointerStart.Location, 8);
+            
+            
 
             base.OnNavigatedTo(e);
         }

@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\stach\\Documents\\GitHub\\UWP\\xamlPaint\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{93C6EAE8-05A9-45B2-ADE4-9D714C9D946E}|GPS\\GPS.csproj|c:\\users\\stach\\documents\\github\\uwp\\xamlpaint\\gps\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93C6EAE8-05A9-45B2-ADE4-9D714C9D946E}|GPS\\GPS.csproj|solutionrelative:gps\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93C6EAE8-05A9-45B2-ADE4-9D714C9D946E}|GPS\\GPS.csproj|c:\\users\\stach\\documents\\github\\uwp\\xamlpaint\\gps\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{93C6EAE8-05A9-45B2-ADE4-9D714C9D946E}|GPS\\GPS.csproj|solutionrelative:gps\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{93C6EAE8-05A9-45B2-ADE4-9D714C9D946E}|GPS\\GPS.csproj|c:\\users\\stach\\documents\\github\\uwp\\xamlpaint\\gps\\coordinates.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{93C6EAE8-05A9-45B2-ADE4-9D714C9D946E}|GPS\\GPS.csproj|solutionrelative:gps\\coordinates.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{93C6EAE8-05A9-45B2-ADE4-9D714C9D946E}|GPS\\GPS.csproj|C:\\Users\\stach\\Documents\\GitHub\\UWP\\xamlPaint\\gps\\coordinates.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{93C6EAE8-05A9-45B2-ADE4-9D714C9D946E}|GPS\\GPS.csproj|solutionrelative:gps\\coordinates.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93C6EAE8-05A9-45B2-ADE4-9D714C9D946E}|GPS\\GPS.csproj|c:\\users\\stach\\documents\\github\\uwp\\xamlpaint\\gps\\geographicaldata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93C6EAE8-05A9-45B2-ADE4-9D714C9D946E}|GPS\\GPS.csproj|solutionrelative:gps\\geographicaldata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,24 +30,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 240,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\stach\\Documents\\GitHub\\UWP\\xamlPaint\\GPS\\MainPage.xaml",
+              "RelativeDocumentMoniker": "GPS\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\stach\\Documents\\GitHub\\UWP\\xamlPaint\\GPS\\MainPage.xaml",
+              "RelativeToolTip": "GPS\\MainPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-25T13:00:44.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\stach\\Documents\\GitHub\\UWP\\xamlPaint\\GPS\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "GPS\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\stach\\Documents\\GitHub\\UWP\\xamlPaint\\GPS\\MainPage.xaml.cs",
+              "RelativeToolTip": "GPS\\MainPage.xaml.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAowGEAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T12:37:54.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GeographicalData.cs",
+              "DocumentMoniker": "C:\\Users\\stach\\Documents\\GitHub\\UWP\\xamlPaint\\GPS\\GeographicalData.cs",
+              "RelativeDocumentMoniker": "GPS\\GeographicalData.cs",
+              "ToolTip": "C:\\Users\\stach\\Documents\\GitHub\\UWP\\xamlPaint\\GPS\\GeographicalData.cs",
+              "RelativeToolTip": "GPS\\GeographicalData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T12:31:05.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Coordinates.xaml.cs",
               "DocumentMoniker": "C:\\Users\\stach\\Documents\\GitHub\\UWP\\xamlPaint\\GPS\\Coordinates.xaml.cs",
               "RelativeDocumentMoniker": "GPS\\Coordinates.xaml.cs",
-              "ToolTip": "C:\\Users\\stach\\Documents\\GitHub\\UWP\\xamlPaint\\GPS\\Coordinates.xaml.cs*",
-              "RelativeToolTip": "GPS\\Coordinates.xaml.cs*",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAkwC8AAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\stach\\Documents\\GitHub\\UWP\\xamlPaint\\GPS\\Coordinates.xaml.cs",
+              "RelativeToolTip": "GPS\\Coordinates.xaml.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAA1wDgAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-12T08:34:09.988Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Coordinates.xaml",
               "DocumentMoniker": "C:\\Users\\stach\\Documents\\GitHub\\UWP\\xamlPaint\\GPS\\Coordinates.xaml",
               "RelativeDocumentMoniker": "GPS\\Coordinates.xaml",
