@@ -23,13 +23,12 @@
             FontSize="20"
             Margin="15 10 0 10"
             />
-        <TextBlock
+            <TextBlock
             Text="Map"
             Style="{ThemeResource HeaderTextBlockStyle}"
             HorizontalAlignment="Left"
             Margin="30 0 0 8"
             />
-            
         </StackPanel>
         <Custom:MapControl x:ConnectionId='2'
             x:Name="AppMap"

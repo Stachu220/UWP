@@ -26,6 +26,15 @@ namespace GPS
         public Coordinates()
         {
             this.InitializeComponent();
+            if (GeographicalData.StartingPoint.Latitude != null)
+                CurrentCoordinates.Text = "Latitude: " + GeographicalData.StartingPoint.Latitude.ToString(".###") + "\nLongtitude: " + GeographicalData.StartingPoint.Longitude.ToString(".###");
+            if (GeographicalData.EndPointDescription != null)
+            {
+                GeographicalLength.Text = GeographicalData.EndPoint.Latitude.ToString();
+                GeographicalWidth.Text = GeographicalData.EndPoint.Longitude.ToString();
+                SelectedAddress.Text = GeographicalData.EndPointDescription;
+            }
+
         }
 
         private async void onSearchClicked(object sender, RoutedEventArgs e)

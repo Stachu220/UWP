@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "UAP,Version=v10.0.17763": {
+      "BingMapsRESTToolkit/1.1.4": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/BingMapsRESTToolkit.dll": {
+            "related": ".pdb;.XML"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/BingMapsRESTToolkit.dll": {
+            "related": ".pdb;.XML"
+          }
+        }
+      },
       "Microsoft.Net.Native.Compiler/2.2.12-rel-31116-00": {
         "type": "package",
         "dependencies": {
@@ -571,6 +584,19 @@
       }
     },
     "UAP,Version=v10.0.17763/win10-arm": {
+      "BingMapsRESTToolkit/1.1.4": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/BingMapsRESTToolkit.dll": {
+            "related": ".pdb;.XML"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/BingMapsRESTToolkit.dll": {
+            "related": ".pdb;.XML"
+          }
+        }
+      },
       "Microsoft.Net.Native.Compiler/2.2.12-rel-31116-00": {
         "type": "package",
         "dependencies": {
@@ -1319,6 +1345,19 @@
       }
     },
     "UAP,Version=v10.0.17763/win10-arm-aot": {
+      "BingMapsRESTToolkit/1.1.4": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/BingMapsRESTToolkit.dll": {
+            "related": ".pdb;.XML"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/BingMapsRESTToolkit.dll": {
+            "related": ".pdb;.XML"
+          }
+        }
+      },
       "Microsoft.Net.Native.Compiler/2.2.12-rel-31116-00": {
         "type": "package",
         "dependencies": {
@@ -2068,6 +2107,19 @@
       }
     },
     "UAP,Version=v10.0.17763/win10-arm64-aot": {
+      "BingMapsRESTToolkit/1.1.4": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/BingMapsRESTToolkit.dll": {
+            "related": ".pdb;.XML"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/BingMapsRESTToolkit.dll": {
+            "related": ".pdb;.XML"
+          }
+        }
+      },
       "Microsoft.Net.Native.Compiler/2.2.12-rel-31116-00": {
         "type": "package",
         "dependencies": {
@@ -2817,6 +2869,19 @@
       }
     },
     "UAP,Version=v10.0.17763/win10-x64": {
+      "BingMapsRESTToolkit/1.1.4": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/BingMapsRESTToolkit.dll": {
+            "related": ".pdb;.XML"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/BingMapsRESTToolkit.dll": {
+            "related": ".pdb;.XML"
+          }
+        }
+      },
       "Microsoft.Net.Native.Compiler/2.2.12-rel-31116-00": {
         "type": "package",
         "dependencies": {
@@ -3565,6 +3630,19 @@
       }
     },
     "UAP,Version=v10.0.17763/win10-x64-aot": {
+      "BingMapsRESTToolkit/1.1.4": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/BingMapsRESTToolkit.dll": {
+            "related": ".pdb;.XML"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/BingMapsRESTToolkit.dll": {
+            "related": ".pdb;.XML"
+          }
+        }
+      },
       "Microsoft.Net.Native.Compiler/2.2.12-rel-31116-00": {
         "type": "package",
         "dependencies": {
@@ -4314,6 +4392,19 @@
       }
     },
     "UAP,Version=v10.0.17763/win10-x86": {
+      "BingMapsRESTToolkit/1.1.4": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/BingMapsRESTToolkit.dll": {
+            "related": ".pdb;.XML"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/BingMapsRESTToolkit.dll": {
+            "related": ".pdb;.XML"
+          }
+        }
+      },
       "Microsoft.Net.Native.Compiler/2.2.12-rel-31116-00": {
         "type": "package",
         "dependencies": {
@@ -5062,6 +5153,19 @@
       }
     },
     "UAP,Version=v10.0.17763/win10-x86-aot": {
+      "BingMapsRESTToolkit/1.1.4": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/BingMapsRESTToolkit.dll": {
+            "related": ".pdb;.XML"
+          }
+        },
+        "runtime": {
+          "lib/uap10.0/BingMapsRESTToolkit.dll": {
+            "related": ".pdb;.XML"
+          }
+        }
+      },
       "Microsoft.Net.Native.Compiler/2.2.12-rel-31116-00": {
         "type": "package",
         "dependencies": {
@@ -5812,6 +5916,38 @@
     }
   },
   "libraries": {
+    "BingMapsRESTToolkit/1.1.4": {
+      "sha512": "RFRROSRwLJnaET74DdKcesArciUTPhJ7geWvIsjITzGSIUIAigTLYEgSEZFX9YZVl/CPCPYPyEt0n6raL34Gvw==",
+      "type": "package",
+      "path": "bingmapsresttoolkit/1.1.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bingmapsresttoolkit.1.1.4.nupkg.sha512",
+        "bingmapsresttoolkit.nuspec",
+        "lib/dotnet/BingMapsRESTToolkit.XML",
+        "lib/dotnet/BingMapsRESTToolkit.dll",
+        "lib/dotnet/BingMapsRESTToolkit.pdb",
+        "lib/net45/BingMapsRESTToolkit.XML",
+        "lib/net45/BingMapsRESTToolkit.dll",
+        "lib/net45/BingMapsRESTToolkit.pdb",
+        "lib/netstandard2.0/BingMapsRESTToolkit.deps.json",
+        "lib/netstandard2.0/BingMapsRESTToolkit.dll",
+        "lib/netstandard2.0/BingMapsRESTToolkit.pdb",
+        "lib/portable-net45+wp8+win8/BingMapsRESTToolkit.XML",
+        "lib/portable-net45+wp8+win8/BingMapsRESTToolkit.dll",
+        "lib/portable-net45+wp8+win8/BingMapsRESTToolkit.pdb",
+        "lib/uap10.0/BingMapsRESTToolkit.XML",
+        "lib/uap10.0/BingMapsRESTToolkit.dll",
+        "lib/uap10.0/BingMapsRESTToolkit.pdb",
+        "lib/wpa81/BingMapsRESTToolkit.XML",
+        "lib/wpa81/BingMapsRESTToolkit.dll",
+        "lib/wpa81/BingMapsRESTToolkit.pdb",
+        "lib/xamarinios/BingMapsRESTToolkit.XML",
+        "lib/xamarinios/BingMapsRESTToolkit.dll",
+        "lib/xamarinios/BingMapsRESTToolkit.pdb"
+      ]
+    },
     "Microsoft.Net.Native.Compiler/2.2.12-rel-31116-00": {
       "sha512": "91INue1M3Zap/S6yaglXMEq1UvirknZmzwFZiP0fs3Su5MhWUEJoBJK3BsPsiImnII2NGhrYKrJd+QW7zfClyA==",
       "type": "package",
@@ -10251,6 +10387,7 @@
   },
   "projectFileDependencyGroups": {
     "UAP,Version=v10.0.17763": [
+      "BingMapsRESTToolkit >= 1.1.4",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 6.2.14"
     ]
   },
@@ -10299,6 +10436,10 @@
     "frameworks": {
       "uap10.0.17763": {
         "dependencies": {
+          "BingMapsRESTToolkit": {
+            "target": "Package",
+            "version": "[1.1.4, )"
+          },
           "Microsoft.NETCore.UniversalWindowsPlatform": {
             "target": "Package",
             "version": "[6.2.14, )"
@@ -10334,13 +10475,5 @@
         "#import": []
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
-    }
-  ]
+  }
 }

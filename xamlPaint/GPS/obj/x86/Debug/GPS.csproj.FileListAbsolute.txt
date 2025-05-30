@@ -48,3 +48,5 @@ C:\Users\stach\Documents\GitHub\UWP\xamlPaint\GPS\obj\x86\Debug\Coordinates.g.cs
 C:\Users\stach\Documents\GitHub\UWP\xamlPaint\GPS\obj\x86\Debug\Coordinates.xaml
 C:\Users\stach\Documents\GitHub\UWP\xamlPaint\GPS\obj\x86\Debug\Coordinates.xbf
 C:\Users\stach\Documents\GitHub\UWP\xamlPaint\GPS\bin\x86\Debug\Coordinates.xbf
+C:\Users\stach\Documents\GitHub\UWP\xamlPaint\GPS\bin\x86\Debug\BingMapsRESTToolkit.dll
+C:\Users\stach\Documents\GitHub\UWP\xamlPaint\GPS\bin\x86\Debug\BingMapsRESTToolkit.pdb

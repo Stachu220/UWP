@@ -7,7 +7,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Page.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+    </Page.Resources>
     <Grid x:ConnectionId='2'
                                         >
         <Grid.RowDefinitions>
@@ -53,6 +57,8 @@
                 />
             <TextBox x:ConnectionId='6'
                 x:Name="SelectedAddress"
+                HorizontalAlignment="Center"
+                MinWidth="400"
                 />
             <Grid
                 Margin="10 30 0 0"

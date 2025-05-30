@@ -28,6 +28,9 @@
     <AppxPackagedFile Include="C:\Users\stach\Documents\GitHub\UWP\xamlPaint\GPS\bin\x86\Debug\GPS.exe">
       <PackagePath>entrypoint\GPS.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stach\.nuget\packages\bingmapsresttoolkit\1.1.4\lib\uap10.0\BingMapsRESTToolkit.dll">
+      <PackagePath>BingMapsRESTToolkit.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.14\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
     </AppxPackagedFile>

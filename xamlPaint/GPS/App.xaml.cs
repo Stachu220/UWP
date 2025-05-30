@@ -5,8 +5,10 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.Devices.Geolocation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -66,6 +68,7 @@ namespace GPS
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
+                    LoadState();
                     rootFrame.Navigate(typeof(MainPage), e.Arguments);
                 }
                 // Ensure the current window is active
@@ -94,7 +97,73 @@ namespace GPS
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
+            SaveState();
             deferral.Complete();
         }
+
+        private void SaveState()
+        {
+            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+
+            var composite = new Windows.Storage.ApplicationDataCompositeValue
+            {
+                ["StartLat"] = GeographicalData.StartingPoint.Latitude,
+                ["StartLon"] = GeographicalData.StartingPoint.Longitude,
+                ["StartAlt"] = GeographicalData.StartingPoint.Altitude,
+
+                ["EndLat"] = GeographicalData.EndPoint.Latitude,
+                ["EndLon"] = GeographicalData.EndPoint.Longitude,
+                ["EndAlt"] = GeographicalData.EndPoint.Altitude,
+
+                ["EndPointDescription"] = GeographicalData.EndPointDescription,
+                ["MapVersion"] = MainPage._AppMapStyle.ToString()
+            };
+
+            localSettings.Values["AppState"] = composite;
+        }
+
+
+        private void LoadState()
+        {
+            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+
+            if (localSettings.Values.TryGetValue("AppState", out object compositeObject) &&
+                compositeObject is ApplicationDataCompositeValue composite)
+            {
+                if (composite.TryGetValue("StartLat", out object startLat) &&
+                    composite.TryGetValue("StartLon", out object startLon) &&
+                    composite.TryGetValue("StartAlt", out object startAlt))
+                {
+                    GeographicalData.StartingPoint = new Windows.Devices.Geolocation.BasicGeoposition
+                    {
+                        Latitude = (double)startLat,
+                        Longitude = (double)startLon,
+                        Altitude = (double)startAlt
+                    };
+                }
+
+                if (composite.TryGetValue("EndLat", out object endLat) &&
+                    composite.TryGetValue("EndLon", out object endLon) &&
+                    composite.TryGetValue("EndAlt", out object endAlt))
+                {
+                    GeographicalData.EndPoint = new Windows.Devices.Geolocation.BasicGeoposition
+                    {
+                        Latitude = (double)endLat,
+                        Longitude = (double)endLon,
+                        Altitude = (double)endAlt
+                    };
+                }
+
+                if (composite.TryGetValue("EndPointDescription", out object endPointDescription))
+                    GeographicalData.EndPointDescription = endPointDescription.ToString();
+
+                if (composite.TryGetValue("MapVersion", out object mapVersionStr))
+                {
+                    if (Enum.TryParse(mapVersionStr.ToString(), out Windows.UI.Xaml.Controls.Maps.MapStyle parsedStyle))
+                        MainPage._AppMapStyle = parsedStyle;
+                }
+            }
+        }
+
     }
 }
