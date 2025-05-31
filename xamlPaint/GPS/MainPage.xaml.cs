@@ -17,6 +17,7 @@ using Windows.Services.Maps;
 using Windows.Devices.Geolocation;
 using BingMapsRESTToolkit;
 using System.Text.RegularExpressions;
+using Windows.ApplicationModel.Core;
 
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -131,6 +132,14 @@ namespace GPS
             catch (Exception ex)
             { 
                 Console.WriteLine(ex.ToString());
+                ContentDialog contentDialog = new ContentDialog()
+                {
+                    Title = "Error",
+                    Content = "An error occurred while setting up the map: " + ex.Message,
+                    PrimaryButtonText = "OK"
+                };
+                contentDialog.PrimaryButtonClick += (s, args) => { CoreApplication.Exit(); };
+                contentDialog.ShowAsync();
             }
             Trasa();
 
